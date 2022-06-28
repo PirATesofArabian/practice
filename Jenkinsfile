@@ -8,7 +8,7 @@ pipeline
         stage('Build project'){
             when{
                 expression{
-                    params.version=='1.1.2'
+                    params.version=='1.1.0'
                 }
             }
             steps{
