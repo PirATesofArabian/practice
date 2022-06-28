@@ -1,9 +1,16 @@
 pipeline
 {
     agent any
-
+    parameters{
+        string(name:'version',defaultValue:'1.1.0',description:'version to move to prod')
+    }
     stages{
         stage('Build project'){
+            when{
+                expression{
+                    params.version=='1.1.0'
+                }
+            }
             steps{
                 echo "printing building step"
             }
