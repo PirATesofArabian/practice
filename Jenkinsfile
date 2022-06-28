@@ -2,7 +2,7 @@ pipeline
 {
     agent any
     parameters{
-        string(name:'version',defaultValue:'1.1.0',description:'version to move to prod')
+        choice(name:'version',choices:['1.1.0','1.2.0','1.3.0'],description:'version to move to prod')
     }
     stages{
         stage('Build project'){
